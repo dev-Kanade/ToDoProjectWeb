@@ -8,13 +8,17 @@
         body {
             margin: 0;
             padding: 0;
-            background: linear-gradient(to right, #E0FFFF, #87CEEB); /* 画像に近いグラデーション */
+            background: linear-gradient(to right, #E0FFFF, #87CEEB);
             font-family: Arial, sans-serif;
             min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
         header {
             background: none;
             padding: 20px 30px;
+            width: 100%;
             display: flex;
             justify-content: flex-end;
             align-items: center;
@@ -54,6 +58,8 @@
         .content {
             text-align: center;
             padding: 100px 0;
+            max-width: 1200px;
+            width: 100%;
         }
         .content h1 {
             font-size: 60px;
@@ -75,44 +81,56 @@
             transition: opacity 0.5s ease, transform 0.5s ease;
             margin-top: 40px;
             display: flex;
+            flex-direction: column;
             align-items: center;
-            justify-content: center;
         }
         .profile.active, .content h1.active, .content p.active {
             opacity: 1;
             transform: translateY(0);
         }
-        .profile img {
-            width: 80px;
-            height: 80px;
+        .profile-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 30px;
+            width: 100%;
+            max-width: 600px;
+        }
+        .profile-item img {
+            width: 150px;
+            height: 150px;
             border-radius: 50%;
-            margin-right: 15px;
+            margin-right: 20px;
         }
         .profile-info {
             display: flex;
-            align-items: center;
+            flex-direction: column;
         }
         .profile-info h2 {
-            margin: 0 10px 0 0;
-            font-size: 24px;
+            margin: 0 0 5px 0;
+            font-size: 28px;
         }
-        .profile-info span {
-            font-size: 16px;
+        .profile-info .social-label {
+            font-size: 18px;
             color: #555;
+            margin-bottom: 5px;
         }
-        .profile .sns a {
-            margin: 0 10px;
+        .profile-info .sns a {
+            margin-right: 15px;
             color: #1DA1F2;
             text-decoration: none;
             font-size: 16px;
+        }
+        .profile-info span {
+            font-size: 20px;
+            color: #333;
         }
         footer {
             background: #333;
             color: white;
             text-align: center;
             padding: 10px 0;
-            position: fixed;
             width: 100%;
+            position: fixed;
             bottom: 0;
         }
     </style>
@@ -172,11 +190,12 @@
                     <img src="${dev.icon}" alt="${dev.name}">
                     <div class="profile-info">
                         <h2>${dev.name}</h2>
-                        <span>${dev.type}</span>
+                        <span class="social-label">ソーシャルメディア</span>
                         <div class="sns">
                             ${dev.SNS.X ? `<a href="${dev.SNS.X}" target="_blank">X</a>` : ''}
                             ${dev.SNS.Instagram ? `<a href="${dev.SNS.Instagram}" target="_blank">Instagram</a>` : ''}
                         </div>
+                        <span>${dev.type}</span>
                     </div>
                 `;
                 profileDiv.appendChild(div);
