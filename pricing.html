@@ -67,11 +67,11 @@
         }
         .cards {
             display: flex;
-            justify-content: center;
+            justify-content: center; /* 中央揃え */
             gap: 20px;
             margin-top: 40px;
             width: 100%;
-            max-width: 800px;
+            max-width: 800px; /* カード全体の最大幅 */
         }
         .card {
             background: rgba(255, 255, 255, 0.8);
@@ -79,7 +79,7 @@
             padding: 20px;
             width: 100%;
             max-width: 350px;
-            height: 400px; /* 縦長に */
+            height: 400px;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -106,7 +106,7 @@
             border: none;
             border-radius: 5px;
             cursor: default;
-            margin-top: auto; /* ボタンを下に配置 */
+            margin-top: auto;
         }
         .card .button.active {
             background: #1DA1F2;
@@ -136,8 +136,8 @@
                 <div class="dropdown-content">
                     <a href="blog">ブログ</a>
                     <a href="developer">開発チーム</a>
-                    <a href="social.html">ソーシャルメディア</a>
-                    <a href="dashboard.html">ダッシュボード</a>
+                    <a href="social">ソーシャルメディア</a>
+                    <a href="dashboard">ダッシュボード</a>
                 </div>
             </div>
         </nav>
@@ -163,7 +163,7 @@
                 <p>8リスト/日</p>
                 <p>4ファイル/リスト</p>
                 <p>モバイル</p>
-                <button class="button active" onclick="window.location.href='premium.html'">購読</button>
+                <button class="button active" onclick="window.location.href='premium'">購読</button>
             </div>
         </div>
     </div>
