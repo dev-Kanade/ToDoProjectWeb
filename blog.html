@@ -58,8 +58,9 @@
         .content {
             text-align: center;
             padding: 100px 0;
-            max-width: 1200px;
-            width: 100%;
+            width: 100%; /* 余白をなくすためwidthを100%に */
+            max-width: none; /* max-widthを解除 */
+            margin: 0 auto; /* 中央寄せを維持 */
         }
         .content h1 {
             font-size: 60px;
@@ -77,6 +78,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            width: 100%; /* 幅を親に合わせる */
         }
         .blog-card {
             display: flex;
@@ -102,6 +104,7 @@
         }
         .blog-content {
             flex: 1;
+            position: relative;
         }
         .blog-content h2 {
             margin: 0 0 10px 0;
@@ -142,8 +145,8 @@
             <div class="dropdown">
                 <a href="#" class="dropbtn">その他 ▼</a>
                 <div class="dropdown-content">
-                    <a href="blog">ブログ</a>
-                    <a href="developer">開発チーム</a>
+                    <a href="blog.html">ブログ</a>
+                    <a href="team.html">開発チーム</a>
                     <a href="social.html">ソーシャルメディア</a>
                     <a href="dashboard.html">ダッシュボード</a>
                 </div>
@@ -160,14 +163,13 @@
 
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script>
-        // サンプル記事（API失敗時のフォールバック用）
         const fallbackData = {
             "status": 200,
             "blogdata": [
                 {
                     "blogname": "ToDoProject正式リリース",
                     "blogID": "1",
-                    "blogimage": "https://pbs.twimg.com/media/Gw1qnCqbgAA447Z?format=jpg&name=large",
+                    "blogimage": "",
                     "date": "2025/07/30",
                     "detail": "お子様のスマートフォンの利用時間を管理するToDoアプリ..."
                 }
@@ -210,14 +212,13 @@
             });
         }
 
-        // アニメーション
         window.addEventListener('load', () => {
             const h1 = document.querySelector('.content h1');
             setTimeout(() => {
                 h1.classList.add('active');
                 setTimeout(() => {
                     fetchBlogs();
-                }, 1000); // 1秒遅れで記事を読み込む
+                }, 1000);
             }, 0);
         });
     </script>
