@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mero.開発チーム</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom, #87CEEB, #E0FFFF);
+            font-family: Arial, sans-serif;
+            min-height: 100vh;
+        }
+        header {
+            background: none;
+            padding: 20px 30px;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+        header nav a {
+            margin: 0 20px;
+            text-decoration: none;
+            color: black;
+            font-size: 18px;
+        }
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background: rgba(255, 255, 255, 0.9);
+            min-width: 130px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            z-index: 1;
+            right: 0;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        .dropdown-content a {
+            color: black;
+            padding: 14px 16px;
+            text-decoration: none;
+            display: block;
+            font-size: 16px;
+        }
+        .dropdown-content a:hover {
+            background: #f1f1f1;
+        }
+        .content {
+            text-align: center;
+            padding: 100px 0;
+        }
+        .content h1 {
+            font-size: 60px; /* Mero.開発チームを大きく */
+            margin: 0;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+        .content p {
+            font-size: 40px; /* Mero.サービスのToDoProjectを製作...を大きく */
+            margin: 20px 0;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+        .profile {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+            margin-top: 40px;
+        }
+        .profile.active, .content h1.active, .content p.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .profile img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+        }
+        .profile .sns a {
+            margin: 0 10px;
+            color: #1DA1F2;
+            text-decoration: none;
+        }
+        footer {
+            background: #808080;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="pricing.html">料金と機能</a>
+            <div class="dropdown">
+                <a href="#" class="dropbtn">その他 ▼</a>
+                <div class="dropdown-content">
+                    <a href="blog.html">ブログ</a>
+                    <a href="team.html">開発チーム</a>
+                    <a href="social.html">ソーシャルメディア</a>
+                    <a href="dashboard.html">ダッシュボード</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="content">
+        <h1>Mero.開発チーム</h1>
+        <p>Mero.サービスのToDoProjectを製作しているチーム</p>
+        <div class="profile" id="profile"></div>
+    </div>
+    <footer>
+        <p>©2025 Mero.</p>
+    </footer>
+
+    <script>
+        const developers = [
+            {
+                "name": "Rion",
+                "type": "開発者",
+                "icon": "https://media.mero.com/rion",
+                "SNS": {
+                    "X": "https://www.x.com/mero_rion",
+                    "Instagram": "https://www.instagram.com/mero_rion"
+                }
+            }
+        ];
+
+        function createProfile() {
+            const profileDiv = document.getElementById('profile');
+            developers.forEach(dev => {
+                const div = document.createElement('div');
+                div.innerHTML = `
+                    <img src="${dev.icon}" alt="${dev.name}">
+                    <h2>${dev.name} <span>${dev.type}</span></h2>
+                    <div class="sns">
+                        ${dev.SNS.X ? `<a href="${dev.SNS.X}" target="_blank">X</a>` : ''}
+                        ${dev.SNS.Instagram ? `<a href="${dev.SNS.Instagram}" target="_blank">Instagram</a>` : ''}
+                    </div>
+                `;
+                profileDiv.appendChild(div);
+            });
+        }
+
+        function animateOnScroll() {
+            const h1 = document.querySelector('.content h1');
+            const p = document.querySelector('.content p');
+            const profile = document.querySelector('.profile');
+
+            const h1Top = h1.getBoundingClientRect().top;
+            const pTop = p.getBoundingClientRect().top;
+            const profileTop = profile.getBoundingClientRect().top;
+            const windowHeight = window.innerHeight;
+
+            if (h1Top < windowHeight - 100) h1.classList.add('active');
+            if (pTop < windowHeight - 100) p.classList.add('active');
+            if (profileTop < windowHeight - 100) profile.classList.add('active');
+        }
+
+        window.addEventListener('scroll', animateOnScroll);
+        window.addEventListener('load', () => {
+            createProfile();
+            animateOnScroll();
+        });
+    </script>
+</body>
+</html>
