@@ -65,24 +65,54 @@ header nav a {
     max-width: 1920px;
     margin: 0 auto;
     box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* 要素を中央に */
 }
 
 .content h1 {
-    font-size: 60px;
-    margin: 0;
+    font-size: 60px; /* ①記事名を大きく */
+    margin: 20px 0;
     letter-spacing: 1px;
 }
 
-#title {
-    max-width: 50%; /* タイトルより小さく、h1の約半分 */
+#back {
+    position: absolute; /* ②戻るを左上に */
+    top: 20px;
+    left: 20px;
+    font-size: 18px;
+    text-decoration: none;
+    color: #1DA1F2;
+    padding: 10px 20px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 5px;
+}
+
+#thumbnail {
+    max-width: 400px; /* ④サムネイル、中ぐらいの大きさ */
     height: auto;
     margin: 20px 0;
+    border-radius: 10px;
+}
+
+#date {
+    font-size: 16px; /* ③配信日、pと同じくらい */
+    color: #777;
+    margin-bottom: 20px;
+    position: absolute; /* ④の左下 */
+    left: 20px;
+    bottom: 20px;
 }
 
 img {
-    max-width: 30%; /* 通常のimgをさらに小さく */
+    max-width: 25%; /* ⑤内のimg、④より少し小さい */
     height: auto;
     margin: 10px 0;
+}
+
+p, h2, h3, h4, h5, h6 {
+    margin: 10px 0;
+    text-align: center; /* 中央に */
 }
 
 footer {
