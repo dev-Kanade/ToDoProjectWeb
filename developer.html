@@ -58,9 +58,8 @@
         .content {
             text-align: center;
             padding: 100px 0;
-            width: 100%; /* 余白をなくすためwidthを100%に */
-            max-width: none; /* max-widthを解除 */
-            margin: 0 auto; /* 中央寄せを維持 */
+            width: 100%;
+            margin: 0 auto;
         }
         .content h1 {
             font-size: 60px;
@@ -84,7 +83,8 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            width: 100%; /* 幅を親に合わせる */
+            width: 100%;
+            max-width: 800px;
         }
         .profile.active, .content h1.active, .content p.active {
             opacity: 1;
@@ -95,7 +95,7 @@
             align-items: flex-start;
             margin-bottom: 30px;
             width: 100%;
-            max-width: 600px; /* カードの最大幅は維持 */
+            max-width: 600px;
         }
         .profile-item img {
             width: 150px;
@@ -144,10 +144,10 @@
             <div class="dropdown">
                 <a href="#" class="dropbtn">その他 ▼</a>
                 <div class="dropdown-content">
-                    <a href="blog.html">ブログ</a>
-                    <a href="team.html">開発チーム</a>
-                    <a href="social.html">ソーシャルメディア</a>
-                    <a href="dashboard.html">ダッシュボード</a>
+                    <a href="blog">ブログ</a>
+                    <a href="developer">開発チーム</a>
+                    <a href="social">ソーシャルメディア</a>
+                    <a href="dashboard">ダッシュボード</a>
                 </div>
             </div>
         </nav>
@@ -166,7 +166,7 @@
             {
                 "name": "Rion",
                 "type": "開発者",
-                "icon": "https://pbs.twimg.com/profile_images/1947980348845068288/SaX7gZdI_400x400.jpg",
+                "icon": "https://media.mero.com/rion",
                 "SNS": {
                     "X": "https://www.x.com/mero_rion",
                     "Instagram": "https://www.instagram.com/mero_rion",
