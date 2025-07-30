@@ -14,6 +14,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            overflow-x: hidden; /* 横スクロールを防ぐ */
         }
         header {
             background: none;
@@ -59,11 +60,14 @@
             text-align: center;
             padding: 100px 0;
             width: 100%;
+            max-width: 1920px; /* 1920pxまで対応 */
             margin: 0 auto;
+            box-sizing: border-box; /* パディングを幅に含める */
         }
         .content h1 {
             font-size: 60px;
             margin: 0;
+            letter-spacing: 1px; /* レタリング問題対策 */
             opacity: 0;
             transform: translateY(100px);
             transition: opacity 0.5s ease, transform 0.5s ease;
@@ -78,7 +82,9 @@
             flex-direction: column;
             align-items: center;
             width: 100%;
-            max-width: 800px;
+            max-width: 1200px; /* カードの最大幅を調整 */
+            padding: 0 20px; /* 余白を内部に */
+            box-sizing: border-box;
         }
         .blog-card {
             display: flex;
@@ -86,11 +92,12 @@
             background: rgba(255, 255, 255, 0.8);
             border-radius: 10px;
             padding: 15px;
-            width: 80%;
+            width: 100%;
             max-width: 800px;
             margin-bottom: 20px;
             cursor: pointer;
             transition: transform 0.2s ease;
+            box-sizing: border-box;
         }
         .blog-card:hover {
             transform: scale(1.02);
@@ -109,11 +116,13 @@
         .blog-content h2 {
             margin: 0 0 10px 0;
             font-size: 24px;
+            letter-spacing: 0.5px; /* レタリング調整 */
         }
         .blog-content p {
             margin: 0 0 5px 0;
             font-size: 16px;
             color: #333;
+            letter-spacing: 0.5px; /* レタリング調整 */
         }
         .blog-content .date {
             font-size: 14px;
@@ -169,7 +178,7 @@
                 {
                     "blogname": "ToDoProject正式リリース",
                     "blogID": "1",
-                    "blogimage": "",
+                    "blogimage": "https://pbs.twimg.com/media/GxGdNLoXcAAtqir?format=jpg&name=large",
                     "date": "2025/07/30",
                     "detail": "お子様のスマートフォンの利用時間を管理するToDoアプリ..."
                 }
