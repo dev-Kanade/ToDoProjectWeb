@@ -14,6 +14,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            overflow-x: hidden; /* 横スクロールを防ぐ */
         }
         header {
             background: none;
@@ -59,11 +60,14 @@
             text-align: center;
             padding: 100px 0;
             width: 100%;
+            max-width: 1920px; /* 1920pxまで対応 */
             margin: 0 auto;
+            box-sizing: border-box;
         }
         .content h1 {
             font-size: 60px;
             margin: 0;
+            letter-spacing: 1px;
             opacity: 0;
             transform: translateY(50px);
             transition: opacity 0.5s ease, transform 0.5s ease;
@@ -71,6 +75,7 @@
         .content p {
             font-size: 40px;
             margin: 20px 0;
+            letter-spacing: 0.5px; /* レタリング調整 */
             opacity: 0;
             transform: translateY(50px);
             transition: opacity 0.5s ease, transform 0.5s ease;
@@ -85,6 +90,8 @@
             align-items: center;
             width: 100%;
             max-width: 800px;
+            padding: 0 20px; /* 余白を内部に */
+            box-sizing: border-box;
         }
         .profile.active, .content h1.active, .content p.active {
             opacity: 1;
@@ -110,11 +117,13 @@
         .profile-info h2 {
             margin: 0 0 5px 0;
             font-size: 28px;
+            letter-spacing: 0.5px; /* レタリング調整 */
         }
         .profile-info .social-label {
             font-size: 18px;
             color: #555;
             margin-bottom: 5px;
+            letter-spacing: 0.5px; /* レタリング調整 */
         }
         .profile-info .sns a {
             margin-right: 15px;
@@ -125,6 +134,7 @@
         .profile-info span {
             font-size: 20px;
             color: #333;
+            letter-spacing: 0.5px; /* レタリング調整 */
         }
         footer {
             background: #333;
@@ -166,7 +176,7 @@
             {
                 "name": "Rion",
                 "type": "開発者",
-                "icon": "https://media.mero.com/rion",
+                "icon": "https://pbs.twimg.com/profile_images/1936906220104798208/eopN24Za_400x400.jpg",
                 "SNS": {
                     "X": "https://www.x.com/mero_rion",
                     "Instagram": "https://www.instagram.com/mero_rion",
