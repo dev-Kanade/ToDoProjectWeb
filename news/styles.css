@@ -67,6 +67,24 @@ header nav a {
     box-sizing: border-box;
 }
 
+.content h1 {
+    font-size: 60px;
+    margin: 0;
+    letter-spacing: 1px;
+}
+
+#title {
+    max-width: 50%; /* タイトルより小さく、h1の約半分 */
+    height: auto;
+    margin: 20px 0;
+}
+
+img {
+    max-width: 30%; /* 通常のimgをさらに小さく */
+    height: auto;
+    margin: 10px 0;
+}
+
 footer {
     background: #333;
     color: white;
