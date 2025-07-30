@@ -8,7 +8,7 @@
         body {
             margin: 0;
             padding: 0;
-            background: linear-gradient(to bottom, #87CEEB, #E0FFFF);
+            background: linear-gradient(to right, #E0FFFF, #87CEEB); /* 画像に近いグラデーション */
             font-family: Arial, sans-serif;
             min-height: 100vh;
         }
@@ -56,14 +56,14 @@
             padding: 100px 0;
         }
         .content h1 {
-            font-size: 60px; /* Mero.開発チームを大きく */
+            font-size: 60px;
             margin: 0;
             opacity: 0;
             transform: translateY(50px);
             transition: opacity 0.5s ease, transform 0.5s ease;
         }
         .content p {
-            font-size: 40px; /* Mero.サービスのToDoProjectを製作...を大きく */
+            font-size: 40px;
             margin: 20px 0;
             opacity: 0;
             transform: translateY(50px);
@@ -74,23 +74,40 @@
             transform: translateY(50px);
             transition: opacity 0.5s ease, transform 0.5s ease;
             margin-top: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         .profile.active, .content h1.active, .content p.active {
             opacity: 1;
             transform: translateY(0);
         }
         .profile img {
-            width: 100px;
-            height: 100px;
+            width: 80px;
+            height: 80px;
             border-radius: 50%;
+            margin-right: 15px;
+        }
+        .profile-info {
+            display: flex;
+            align-items: center;
+        }
+        .profile-info h2 {
+            margin: 0 10px 0 0;
+            font-size: 24px;
+        }
+        .profile-info span {
+            font-size: 16px;
+            color: #555;
         }
         .profile .sns a {
             margin: 0 10px;
             color: #1DA1F2;
             text-decoration: none;
+            font-size: 16px;
         }
         footer {
-            background: #808080;
+            background: #333;
             color: white;
             text-align: center;
             padding: 10px 0;
@@ -108,7 +125,7 @@
                 <a href="#" class="dropbtn">その他 ▼</a>
                 <div class="dropdown-content">
                     <a href="blog.html">ブログ</a>
-                    <a href="./developer">開発チーム</a>
+                    <a href="developer">開発チーム</a>
                     <a href="social.html">ソーシャルメディア</a>
                     <a href="dashboard.html">ダッシュボード</a>
                 </div>
@@ -129,7 +146,7 @@
             {
                 "name": "Rion",
                 "type": "開発者",
-                "icon": "https://pbs.twimg.com/profile_images/1947980348845068288/SaX7gZdI_400x400.jpg",
+                "icon": "https://media.mero.com/rion",
                 "SNS": {
                     "X": "https://www.x.com/mero_rion",
                     "Instagram": "https://www.instagram.com/mero_rion"
@@ -141,12 +158,16 @@
             const profileDiv = document.getElementById('profile');
             developers.forEach(dev => {
                 const div = document.createElement('div');
+                div.className = 'profile-item';
                 div.innerHTML = `
                     <img src="${dev.icon}" alt="${dev.name}">
-                    <h2>${dev.name} <span>${dev.type}</span></h2>
-                    <div class="sns">
-                        ${dev.SNS.X ? `<a href="${dev.SNS.X}" target="_blank">X</a>` : ''}
-                        ${dev.SNS.Instagram ? `<a href="${dev.SNS.Instagram}" target="_blank">Instagram</a>` : ''}
+                    <div class="profile-info">
+                        <h2>${dev.name}</h2>
+                        <span>${dev.type}</span>
+                        <div class="sns">
+                            ${dev.SNS.X ? `<a href="${dev.SNS.X}" target="_blank">X</a>` : ''}
+                            ${dev.SNS.Instagram ? `<a href="${dev.SNS.Instagram}" target="_blank">Instagram</a>` : ''}
+                        </div>
                     </div>
                 `;
                 profileDiv.appendChild(div);
