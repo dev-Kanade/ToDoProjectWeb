@@ -13,16 +13,17 @@
             min-height: 100vh;
         }
         header {
-            background: none; /* 背景をbodyと一体化 */
-            padding: 10px 20px;
+            background: none;
+            padding: 20px 30px; /* ヘッダーのパディングを大きく */
             display: flex;
-            justify-content: flex-end; /* 右寄せ */
+            justify-content: flex-end;
             align-items: center;
         }
         header nav a {
-            margin: 0 15px;
+            margin: 0 20px; /* リンク間の間隔を大きく */
             text-decoration: none;
             color: black;
+            font-size: 18px; /* テキストを大きく */
         }
         .dropdown {
             position: relative;
@@ -32,19 +33,20 @@
             display: none;
             position: absolute;
             background: rgba(255, 255, 255, 0.9);
-            min-width: 120px;
+            min-width: 130px; /* ドロップダウンの幅を少し大きく */
             box-shadow: 0 8px 16px rgba(0,0,0,0.2);
             z-index: 1;
-            right: 0; /* ドロップダウンを右に配置 */
+            right: 0;
         }
         .dropdown:hover .dropdown-content {
             display: block;
         }
         .dropdown-content a {
             color: black;
-            padding: 12px 16px;
+            padding: 14px 16px; /* ドロップダウン内のパディングを大きく */
             text-decoration: none;
             display: block;
+            font-size: 16px; /* ドロップダウン内のテキストを大きく */
         }
         .dropdown-content a:hover {
             background: #f1f1f1;
@@ -55,18 +57,24 @@
         }
         .content h1 {
             margin: 0;
+            font-size: 48px; /* ToDoProjectを大きく */
+        }
+        .content p {
+            font-size: 32px; /* お子様のAndroid...を大きく */
+            margin: 10px 0;
         }
         .buttons {
             margin-top: 20px;
         }
         .btn {
-            padding: 10px 20px;
-            margin: 0 10px;
+            padding: 12px 25px; /* ボタンのパディングを少し大きく */
+            margin: 0 15px;
             background: rgba(0, 0, 0, 0.5);
             color: white;
             text-decoration: none;
             border: none;
             cursor: pointer;
+            font-size: 16px; /* ボタン内のテキストを大きく */
         }
         footer {
             background: #808080;
