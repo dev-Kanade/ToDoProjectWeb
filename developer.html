@@ -4,148 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mero.開発チーム</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            background: linear-gradient(to right, #E0FFFF, #87CEEB);
-            font-family: Arial, sans-serif;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            overflow-x: hidden; /* 横スクロールを防ぐ */
-        }
-        header {
-            background: none;
-            padding: 20px 30px;
-            width: 100%;
-            display: flex;
-            justify-content: flex-end;
-            align-items: center;
-        }
-        header nav a {
-            margin: 0 20px;
-            text-decoration: none;
-            color: black;
-            font-size: 18px;
-        }
-        .dropdown {
-            position: relative;
-            display: inline-block;
-        }
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background: rgba(255, 255, 255, 0.9);
-            min-width: 130px;
-            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-            z-index: 1;
-            right: 0;
-        }
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
-        .dropdown-content a {
-            color: black;
-            padding: 14px 16px;
-            text-decoration: none;
-            display: block;
-            font-size: 16px;
-        }
-        .dropdown-content a:hover {
-            background: #f1f1f1;
-        }
-        .content {
-            text-align: center;
-            padding: 100px 0;
-            width: 100%;
-            max-width: 1920px; /* 1920pxまで対応 */
-            margin: 0 auto;
-            box-sizing: border-box;
-        }
-        .content h1 {
-            font-size: 60px;
-            margin: 0;
-            letter-spacing: 1px;
-            opacity: 0;
-            transform: translateY(50px);
-            transition: opacity 0.5s ease, transform 0.5s ease;
-        }
-        .content p {
-            font-size: 40px;
-            margin: 20px 0;
-            letter-spacing: 0.5px; /* レタリング調整 */
-            opacity: 0;
-            transform: translateY(50px);
-            transition: opacity 0.5s ease, transform 0.5s ease;
-        }
-        .profile {
-            opacity: 0;
-            transform: translateY(50px);
-            transition: opacity 0.5s ease, transform 0.5s ease;
-            margin-top: 40px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            width: 100%;
-            max-width: 800px;
-            padding: 0 20px; /* 余白を内部に */
-            box-sizing: border-box;
-        }
-        .profile.active, .content h1.active, .content p.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        .profile-item {
-            display: flex;
-            align-items: flex-start;
-            margin-bottom: 30px;
-            width: 100%;
-            max-width: 600px;
-        }
-        .profile-item img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            margin-right: 20px;
-        }
-        .profile-info {
-            display: flex;
-            flex-direction: column;
-        }
-        .profile-info h2 {
-            margin: 0 0 5px 0;
-            font-size: 28px;
-            letter-spacing: 0.5px; /* レタリング調整 */
-        }
-        .profile-info .social-label {
-            font-size: 18px;
-            color: #555;
-            margin-bottom: 5px;
-            letter-spacing: 0.5px; /* レタリング調整 */
-        }
-        .profile-info .sns a {
-            margin-right: 15px;
-            color: #1DA1F2;
-            text-decoration: none;
-            font-size: 16px;
-        }
-        .profile-info span {
-            font-size: 20px;
-            color: #333;
-            letter-spacing: 0.5px; /* レタリング調整 */
-        }
-        footer {
-            background: #333;
-            color: white;
-            text-align: center;
-            padding: 10px 0;
-            width: 100%;
-            position: fixed;
-            bottom: 0;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/developer.css">
 </head>
 <body>
     <header>
@@ -170,30 +30,35 @@
     <footer>
         <p>©2025 Mero.</p>
     </footer>
-
+    <script src="script.js"></script>
     <script>
         const developers = [
             {
                 "name": "Rion",
                 "type": "開発者",
-                "icon": "https://pbs.twimg.com/profile_images/1936906220104798208/eopN24Za_400x400.jpg",
+                "icon": "https://pbs.twimg.com/profile_images/1947980348845068288/SaX7gZdI_400x400.jpg",
                 "SNS": {
                     "X": "https://www.x.com/mero_rion",
                     "Instagram": "https://www.instagram.com/mero_rion",
                     "TikTok": "https://www.tiktok.com/@mero_rion",
-                    "GitHub": "https://www.github.com/dev_kanade"
+                    "GitHub": "https://www.github.com/mero_rion"
                 }
             }
         ];
 
         function createProfile() {
             const profileDiv = document.getElementById('profile');
+            const icons = {
+                "X": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.digital-farm.com%2Fstaffblog%2F17253&psig=AOvVaw1YL3bL4EmA-wfcx9fx9A_l&ust=1753996815314000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCJj4mbrB5Y4DFQAAAAAdAAAAABAE",
+                "Instagram": "https://png.pngtree.com/png-clipart/20180626/ourmid/pngtree-instagram-icon-instagram-logo-png-image_3584852.png"
+            };
             developers.forEach(dev => {
                 const div = document.createElement('div');
                 div.className = 'profile-item';
                 let snsLinks = '';
                 for (const [platform, url] of Object.entries(dev.SNS)) {
-                    snsLinks += `<a href="${url}" target="_blank">${platform}</a>`;
+                    const iconUrl = icons[platform] || 'https://via.placeholder.com/20';
+                    snsLinks += `<a href="${url}" target="_blank"><img src="${iconUrl}" alt="${platform}">${platform}</a>`;
                 }
                 div.innerHTML = `
                     <img src="${dev.icon}" alt="${dev.name}">
