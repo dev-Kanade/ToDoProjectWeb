@@ -1,3 +1,4 @@
+/* ./css/developer.css */
 .profile {
     opacity: 0;
     transform: translateY(50px);
@@ -53,14 +54,13 @@
 .profile-info .sns a {
     margin-right: 15px;
     text-decoration: none;
-    display: inline-flex;
-    align-items: center;
+    color: #1DA1F2;
+    font-size: 16px;
+    transition: color 0.3s ease;
 }
 
-.profile-info .sns img {
-    width: 20px;
-    height: 20px;
-    margin-right: 5px;
+.profile-info .sns a:hover {
+    color: #0d8bd7;
 }
 
 .profile-info span {
