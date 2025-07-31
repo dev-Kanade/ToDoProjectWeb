@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>読み込みエラー</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="../pricing">料金と機能</a>
+            <div class="dropdown">
+                <a href="#" class="dropbtn">その他 ▼</a>
+                <div class="dropdown-content">
+                    <a href="../blog">ブログ</a>
+                    <a href="../developer">開発チーム</a>
+                    <a href="../social">ソーシャルメディア</a>
+                    <a href="../dashboard">ダッシュボード</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="content">
+        <a href="../blog" id="back">戻る</a> <!-- ②戻るボタン -->
+        <h1>記事の読み込みエラー</h1> <!-- ①記事名 -->
+        <img src="./img/error/png" alt="画像" id="thumbnail"> <!-- ④サムネイル -->
+        <p id="date">unknown</p> <!-- ③配信日 -->
+        <div> <!-- ⑤body、idなし -->
+            <h2>エラー内容</h2>
+            <p>記事のリストを読み込む際にエラーが発生しました。</p>
+            <h3>主な要因</h3>
+            <p>ネットワークの不安定</p>
+            <p>または</p>
+            <p>サーバー側の問題</p>
+            <h3>対応</h3>
+            <p>問題を確認次第、修正作業を行っていますので、修正されるまでお待ちください。ご迷惑をおかけします。</p>
+            <img src="./img/error.png" alt="画像"> <!-- ⑤内のimg -->
+        </div>
+    </div>
+    <footer>
+        <p>©2025 Mero.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
