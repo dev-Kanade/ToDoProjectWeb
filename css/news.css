@@ -1,0 +1,33 @@
+#back {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 18px;
+    text-decoration: none;
+    color: #1DA1F2;
+    padding: 10px 20px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 5px;
+}
+
+#thumbnail {
+    max-width: 400px;
+    height: auto;
+    margin: 20px 0;
+    border-radius: 10px;
+}
+
+#date {
+    font-size: 16px;
+    color: #777;
+    margin-bottom: 20px;
+    position: absolute;
+    left: 20px;
+    bottom: 20px;
+}
+
+img {
+    max-width: 25%;
+    height: auto;
+    margin: 10px 0;
+}
