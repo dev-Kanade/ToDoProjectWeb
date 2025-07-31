@@ -4,148 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>最新情報</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            background: linear-gradient(to right, #E0FFFF, #87CEEB);
-            font-family: Arial, sans-serif;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            overflow-x: hidden; /* 横スクロールを防ぐ */
-        }
-        header {
-            background: none;
-            padding: 20px 30px;
-            width: 100%;
-            display: flex;
-            justify-content: flex-end;
-            align-items: center;
-        }
-        header nav a {
-            margin: 0 20px;
-            text-decoration: none;
-            color: black;
-            font-size: 18px;
-        }
-        .dropdown {
-            position: relative;
-            display: inline-block;
-        }
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background: rgba(255, 255, 255, 0.9);
-            min-width: 130px;
-            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-            z-index: 1;
-            right: 0;
-        }
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
-        .dropdown-content a {
-            color: black;
-            padding: 14px 16px;
-            text-decoration: none;
-            display: block;
-            font-size: 16px;
-        }
-        .dropdown-content a:hover {
-            background: #f1f1f1;
-        }
-        .content {
-            text-align: center;
-            padding: 100px 0;
-            width: 100%;
-            max-width: 1920px; /* 1920pxまで対応 */
-            margin: 0 auto;
-            box-sizing: border-box; /* パディングを幅に含める */
-        }
-        .content h1 {
-            font-size: 60px;
-            margin: 0;
-            letter-spacing: 1px; /* レタリング問題対策 */
-            opacity: 0;
-            transform: translateY(100px);
-            transition: opacity 0.5s ease, transform 0.5s ease;
-        }
-        .content h1.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        .blog-list {
-            margin-top: 40px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            width: 100%;
-            max-width: 1200px; /* カードの最大幅を調整 */
-            padding: 0 20px; /* 余白を内部に */
-            box-sizing: border-box;
-        }
-        .blog-card {
-            display: flex;
-            align-items: center;
-            background: rgba(255, 255, 255, 0.8);
-            border-radius: 10px;
-            padding: 15px;
-            width: 100%;
-            max-width: 800px;
-            margin-bottom: 20px;
-            cursor: pointer;
-            transition: transform 0.2s ease;
-            box-sizing: border-box;
-        }
-        .blog-card:hover {
-            transform: scale(1.02);
-        }
-        .blog-card img {
-            width: 150px;
-            height: 100px;
-            object-fit: cover;
-            margin-right: 20px;
-            border-radius: 5px;
-        }
-        .blog-content {
-            flex: 1;
-            position: relative;
-        }
-        .blog-content h2 {
-            margin: 0 0 10px 0;
-            font-size: 24px;
-            letter-spacing: 0.5px; /* レタリング調整 */
-        }
-        .blog-content p {
-            margin: 0 0 5px 0;
-            font-size: 16px;
-            color: #333;
-            letter-spacing: 0.5px; /* レタリング調整 */
-        }
-        .blog-content .date {
-            font-size: 14px;
-            color: #777;
-            position: absolute;
-            bottom: 15px;
-            right: 15px;
-        }
-        .error-message {
-            color: red;
-            font-size: 18px;
-            margin-top: 20px;
-        }
-        footer {
-            background: #333;
-            color: white;
-            text-align: center;
-            padding: 10px 0;
-            width: 100%;
-            position: fixed;
-            bottom: 0;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/blog.css">
 </head>
 <body>
     <header>
@@ -169,18 +29,18 @@
     <footer>
         <p>©2025 Mero.</p>
     </footer>
-
+    <script src="script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script>
         const fallbackData = {
             "status": 200,
             "blogdata": [
                 {
-                    "blogname": "記事の読み込み中にエラーが発生しました。",
-                    "blogID": "error",
-                    "blogimage": "./news/img/error.png",
-                    "date": "unknown",
-                    "detail": "エラーの要因と対応"
+                    "blogname": "ToDoProject正式リリース",
+                    "blogID": "1",
+                    "blogimage": "",
+                    "date": "2025/07/30",
+                    "detail": "お子様のスマートフォンの利用時間を管理するToDoアプリ..."
                 }
             ]
         };
