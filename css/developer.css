@@ -1,0 +1,70 @@
+.profile {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 800px;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.profile.active, .content h1.active, .content p.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.profile-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 30px;
+    width: 100%;
+    max-width: 600px;
+}
+
+.profile-item img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.profile-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.profile-info h2 {
+    margin: 0 0 5px 0;
+    font-size: 28px;
+    letter-spacing: 0.5px;
+}
+
+.profile-info .social-label {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 5px;
+    letter-spacing: 0.5px;
+}
+
+.profile-info .sns a {
+    margin-right: 15px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+}
+
+.profile-info .sns img {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+}
+
+.profile-info span {
+    font-size: 20px;
+    color: #333;
+    letter-spacing: 0.5px;
+}
