@@ -80,12 +80,18 @@
             font-size: 60px;
             margin: 0;
             letter-spacing: 1px;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
         }
 
         .error-message {
             font-size: 24px;
             color: #d32f2f;
             margin: 20px 0;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
         }
 
         .back-home {
@@ -95,6 +101,16 @@
             padding: 10px 20px;
             background: rgba(255, 255, 255, 0.8);
             border-radius: 5px;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+
+        .content.active h1,
+        .content.active .error-message,
+        .content.active .back-home {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         footer {
@@ -110,12 +126,23 @@
 </head>
 <body>
     <header>
-       
+        <nav>
+            <a href="pricing">料金と機能</a>
+            <div class="dropdown">
+                <a href="#" class="dropbtn">その他 ▼</a>
+                <div class="dropdown-content">
+                    <a href="blog">ブログ</a>
+                    <a href="developer">開発チーム</a>
+                    <a href="social">ソーシャルメディア</a>
+                    <a href="dashboard">ダッシュボード</a>
+                </div>
+            </div>
+        </nav>
     </header>
     <div class="content">
         <h1>404</h1>
         <div class="error-message">ページが見つかりませんでした。</div>
-        <a href="https://dev-kanade.github.io/ToDoProjectWeb/" class="back-home">ホームに戻る</a>
+        <a href="pricing" class="back-home">ホームに戻る</a>
     </div>
     <footer>
         <p>©2025 Mero.</p>
@@ -123,6 +150,10 @@
     <script>
         window.addEventListener('load', () => {
             console.log('Page loaded');
+            const content = document.querySelector('.content');
+            setTimeout(() => {
+                content.classList.add('active');
+            }, 100); // 100ms遅延でアニメーション開始
         });
     </script>
 </body>
