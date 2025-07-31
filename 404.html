@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 Not Found</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #E0FFFF, #87CEEB);
+            font-family: Arial, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            overflow-x: hidden;
+        }
+
+        header {
+            background: none;
+            padding: 20px 30px;
+            width: 100%;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+
+        header nav a {
+            margin: 0 20px;
+            text-decoration: none;
+            color: black;
+            font-size: 18px;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background: rgba(255, 255, 255, 0.9);
+            min-width: 130px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            z-index: 1;
+            right: 0;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 14px 16px;
+            text-decoration: none;
+            display: block;
+            font-size: 16px;
+        }
+
+        .dropdown-content a:hover {
+            background: #f1f1f1;
+        }
+
+        .content {
+            text-align: center;
+            padding: 100px 0;
+            width: 100%;
+            max-width: 1920px;
+            margin: 0 auto;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .content h1 {
+            font-size: 60px;
+            margin: 0;
+            letter-spacing: 1px;
+        }
+
+        .error-message {
+            font-size: 24px;
+            color: #d32f2f;
+            margin: 20px 0;
+        }
+
+        .back-home {
+            font-size: 18px;
+            text-decoration: none;
+            color: #1DA1F2;
+            padding: 10px 20px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 5px;
+        }
+
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            width: 100%;
+            position: fixed;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="pricing">料金と機能</a>
+            <div class="dropdown">
+                <a href="#" class="dropbtn">その他 ▼</a>
+                <div class="dropdown-content">
+                    <a href="blog">ブログ</a>
+                    <a href="developer">開発チーム</a>
+                    <a href="social">ソーシャルメディア</a>
+                    <a href="dashboard">ダッシュボード</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="content">
+        <h1>404</h1>
+        <div class="error-message">ページが見つかりませんでした。</div>
+        <a href="pricing" class="back-home">ホームに戻る</a>
+    </div>
+    <footer>
+        <p>©2025 Mero.</p>
+    </footer>
+    <script>
+        window.addEventListener('load', () => {
+            console.log('Page loaded');
+        });
+    </script>
+</body>
+</html>
