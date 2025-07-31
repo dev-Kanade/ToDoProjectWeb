@@ -96,6 +96,11 @@
             transition: opacity 0.5s ease, transform 0.5s ease;
         }
 
+        .content h1.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
         .blog-list {
             margin-top: 40px;
             display: flex;
@@ -194,18 +199,11 @@
             "status": 200,
             "blogdata": [
                 {
-                    "blogname": "記事の読み込み中にエラーが発生",
+                    "blogname": "記事の読み込み中にエラーが発生しました。",
                     "blogID": "error",
                     "blogimage": "./news/img/error.png",
                     "date": "",
                     "detail": "記事の読み込み中にエラーが発生しました。"
-                },
-                {
-                    "blogname": "モバイル版アップデート",
-                    "blogID": "2",
-                    "blogimage": "",
-                    "date": "2025/08/01",
-                    "detail": "モバイル版の新機能を追加予定..."
                 }
             ]
         };
@@ -250,11 +248,14 @@
         }
 
         window.addEventListener('load', () => {
+            console.log('Page loaded');
             const h1 = document.querySelector('.content h1');
             setTimeout(() => {
                 h1.classList.add('active');
+                console.log('h1 animation triggered');
                 setTimeout(() => {
                     fetchBlogs();
+                    console.log('fetchBlogs triggered');
                 }, 1000); // 1秒後に記事取得
             }, 0);
         });
