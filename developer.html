@@ -48,17 +48,12 @@
 
         function createProfile() {
             const profileDiv = document.getElementById('profile');
-            const icons = {
-                "X": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.digital-farm.com%2Fstaffblog%2F17253&psig=AOvVaw1YL3bL4EmA-wfcx9fx9A_l&ust=1753996815314000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCJj4mbrB5Y4DFQAAAAAdAAAAABAE",
-                "Instagram": "https://png.pngtree.com/png-clipart/20180626/ourmid/pngtree-instagram-icon-instagram-logo-png-image_3584852.png"
-            };
             developers.forEach(dev => {
                 const div = document.createElement('div');
                 div.className = 'profile-item';
                 let snsLinks = '';
                 for (const [platform, url] of Object.entries(dev.SNS)) {
-                    const iconUrl = icons[platform] || 'https://via.placeholder.com/20';
-                    snsLinks += `<a href="${url}" target="_blank"><img src="${iconUrl}" alt="${platform}">${platform}</a>`;
+                    snsLinks += `<a href="${url}" target="_blank">${platform}</a>`;
                 }
                 div.innerHTML = `
                     <img src="${dev.icon}" alt="${dev.name}">
