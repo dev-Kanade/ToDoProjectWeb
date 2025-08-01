@@ -306,7 +306,7 @@
                 blogList.appendChild(card);
                 setTimeout(() => {
                     card.classList.add('active');
-                }, 1000 + index * 100); // 1秒後から0.1秒間隔でスライドイン
+                }, 1000 + index * 100); 
             });
         }
 
@@ -319,7 +319,7 @@
                 setTimeout(() => {
                     fetchBlogs();
                     console.log('fetchBlogs triggered');
-                }, 1000); // 1秒後に記事取得
+                }, 1000); 
             }, 0);
         });
     </script>
